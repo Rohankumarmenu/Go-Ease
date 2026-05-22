@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"strings"
 )
 
@@ -41,5 +42,9 @@ func (d deck) toString() string {
 // "red,blue,green"  to a single string
 // cards.toString()
 // func toByteSlice(){
+
+func (d deck) saveTofile(filename string) error {
+	return ioutil.WriteFile(filename, []byte(d.toString()), 0666)
+}
 
 // }
