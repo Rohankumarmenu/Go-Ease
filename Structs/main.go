@@ -31,14 +31,14 @@ func main() {
 			zipCode: 12345,
 		},
 	}
-	check.updatedName("Veeru")
+	checkPointer := &check
+	checkPointer.updatedName("Veeru")
 	check.printed()
 }
 
+func (pointerToPerson *person) updatedName(newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName
+}
 func (p person) printed() {
 	fmt.Printf("%+v", p)
-}
-
-func (p person) updatedName(newFirstName string) {
-	p.firstName = newFirstName
 }
