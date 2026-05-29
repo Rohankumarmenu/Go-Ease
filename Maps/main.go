@@ -9,5 +9,7 @@ func main() {
 	// }
 	colores := make(map[int]string)
 	colores[10] = "#ff0000"
+	delete(colores, 10)
 	fmt.Println(colores)
+
 }
